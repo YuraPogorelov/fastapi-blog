@@ -3,4 +3,4 @@ from blog import blog
 
 routes = APIRouter()
 
-routes.include_router(blog.router, prefix="blog/")
+routes.include_router(blog.router, prefix="/blog")

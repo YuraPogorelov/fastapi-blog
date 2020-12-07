@@ -8,4 +8,8 @@ def get_post_list(db: Session):
 
 
 def create_post(db: Session, item: PostCreate):
-
+    post = Post(**item.dict())
+    db.add(post)
+    db.commit()
+    db.refresh(post)
+    return post
